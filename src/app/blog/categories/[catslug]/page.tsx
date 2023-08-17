@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/posts";
 
-export default function BlogPage() {
+export default function PostsByCat() {
 	const posts = getPosts();
+	console.log(posts);
 	return (
 		<main>
 			<h1>Welcome to my blog</h1>
 			<h2>Blog posts</h2>
-			<ul className="flex flex-col gap-4">
+			<ul>
 				{posts.map((post) => {
 					return (
 						<li key={post.slug} className="flex flex-col border border-solid">
