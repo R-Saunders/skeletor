@@ -1,5 +1,16 @@
 import Link from "next/link";
-import { getPosts } from "@/lib/posts";
+import { getPosts, getCategories } from "@/lib/posts";
+
+type CategoryParams = {
+	params: {
+		catslug: string;
+	};
+};
+
+export function generateStaticParams() {
+	const categories = getCategories();
+	// return categories.map(())
+}
 
 export default function PostsByCat() {
 	const posts = getPosts();
